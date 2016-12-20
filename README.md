@@ -1,5 +1,5 @@
 # RedditBot
-Bot to post on Reddit:
+Bots to post on Reddit:
 
 CommentBot proceeds through rising posts in askreddit and searches for old posts that are similar to the rising post but with a karma amount over a certain threshold. Using the old post, CommentBot will then submit the top comment of that post and submit it to the rising post.
 
