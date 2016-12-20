@@ -38,7 +38,7 @@ for submission in subreddit.rising(limit=50):
         print("top comment is: ",topComment.body)
         break
     if foundComment ==True:
-        for comments in reddit.redditor('umm_totally_real').comments.new():
+      for comments in reddit.redditor('umm_totally_real').comments.new(limit=10):
             print("comment is: ",comments.body)
             if comments.body == topComment.body:
                 foundComment = False
