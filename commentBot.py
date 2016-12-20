@@ -1,15 +1,12 @@
 #! /usr/bin/python3
 import praw
-import difflib
+from info import *
 
-# umm_totally_real
-# redditbot
-
-reddit = praw.Reddit(client_id='PUtf-2W1mJ2cvQ',
-        client_secret='54sg78JWGZbibmaMFJ6Dq3WBUjk',
-        user_agent='test script by /u/umm_totally_real',
-        password='redditbot',
-        username='umm_totally_real')
+reddit = praw.Reddit(client_id=client_id,
+        client_secret=client_secret,
+        user_agent=user_agent,
+        password=password,
+        username=username)
 
 subreddit = reddit.subreddit('askreddit')
 
@@ -38,7 +35,7 @@ for submission in subreddit.rising(limit=50):
         print("top comment is: ",topComment.body)
         break
     if foundComment ==True:
-      for comments in reddit.redditor('umm_totally_real').comments.new(limit=10):
+      for comments in reddit.redditor(username).comments.new(limit=10):
             print("comment is: ",comments.body)
             if comments.body == topComment.body:
                 foundComment = False
