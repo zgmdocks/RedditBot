@@ -32,7 +32,7 @@ for submission in subreddit.rising(limit=50):
         if time == original_time or result.score < 50:
             continue
         topComment = result.comments[0]
-        if topComment.body == '[deleted]':
+        if topComment.body == '[deleted]' or topComment.is_root == False:
             continue
         foundComment=True
         print("top comment is: ",topComment.body)
