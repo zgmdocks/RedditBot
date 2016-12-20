@@ -31,7 +31,7 @@ for submission in subreddit.rising(limit=50):
         time = result.created
         if time == original_time or result.score < 50:
             continue
-        topComment = result.comments[1]
+        topComment = result.comments[0]
         if topComment.body == '[deleted]':
             continue
         foundComment=True
