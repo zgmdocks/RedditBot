@@ -12,7 +12,7 @@ reddit = praw.Reddit(client_id=client_id,
 for comment in reddit.redditor(username).comments.new(limit=None):
     print('Comment is: ',comment.body)
     print('SCORE IS: ', comment.score)
-    if comment.score <= -1:
+    if comment.score <= 0:
         print('delete')
         comment.delete()
 
